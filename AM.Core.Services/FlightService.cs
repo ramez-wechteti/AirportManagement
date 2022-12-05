@@ -19,6 +19,9 @@ namespace AM.Core.Services
         {
             //this.unitOfWork = unitOfWork;
             //repo = this.unitOfWork.GetRepository<Flight>();
+            
+            //Q15
+            Flights = repo.GetAll();
         }
         public IList<DateTime> GetFlightDates(string destination)
         {

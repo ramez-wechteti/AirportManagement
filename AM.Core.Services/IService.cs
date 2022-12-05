@@ -13,5 +13,6 @@ namespace AM.Core.Services
         void Update(T obj);
         void Delete(T obj);
         IList<T> GetAll();
+        void Delete(IList<T> list);
     }
 }

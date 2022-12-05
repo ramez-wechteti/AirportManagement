@@ -10,9 +10,9 @@ namespace AM.Core.Services
 {
     public class Service<T> : IService<T> where T : class
     {
-        IRepository<T> repo;
+        protected IRepository<T> repo;
 
-        readonly IUnitOfWork unitOfWork;
+        protected readonly IUnitOfWork unitOfWork;
 
         public Service(IUnitOfWork unitOfWork)
         {
@@ -46,6 +46,16 @@ namespace AM.Core.Services
         public IList<T> GetAll()
         {
             return repo.GetAll();
+        }
+
+        public void Delete(IList<T> list)
+        {
+            foreach (T obj in list)
+            {
+                repo.Delete(obj);
+            }
+
+            unitOfWork.Save();
         }
     }
 }
