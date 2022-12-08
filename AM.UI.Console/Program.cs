@@ -247,6 +247,31 @@ using AM.Core.Interfaces;
 
 #region 05/12/2022
 //Q12
+//AMContext context = new AMContext();
+//IUnitOfWork unitOfWork = new UnitOfWork(context);
+//IFlightService flightService = new FlightService(unitOfWork);
+//flightService.Add(new Flight()
+//{
+//    Destination = "Qatar",
+//    Departure = "Tunis",
+//    FlightDate = new DateTime(2022, 10, 18, 7, 0, 0),
+//    EstimatedDuration = 120,
+//    EffectiveArrival = new DateTime(2022, 10, 18, 9, 20, 0),
+//    Comment = "Comment"
+//});
+
+
+//IPlaneService planeService = new PlaneService(unitOfWork);
+//planeService.Add(new Plane()
+//{
+//    Capacity = 100,
+//    ManifactureDate = new DateTime(2000, 1, 1),
+//    MyPlaneType = PlaneType.AirBus
+//});
+#endregion
+
+#region 08/12/2022
+
 AMContext context = new AMContext();
 IUnitOfWork unitOfWork = new UnitOfWork(context);
 IFlightService flightService = new FlightService(unitOfWork);
@@ -255,17 +280,28 @@ flightService.Add(new Flight()
     Destination = "Qatar",
     Departure = "Tunis",
     FlightDate = new DateTime(2022, 10, 18, 7, 0, 0),
-    EstimatedDuration = 120,
+    EstimatedDuration = 20,
     EffectiveArrival = new DateTime(2022, 10, 18, 9, 20, 0),
     Comment = "Comment"
 });
 
-
-IPlaneService planeService = new PlaneService(unitOfWork);
-planeService.Add(new Plane()
+flightService.Add(new Flight()
 {
-    Capacity = 100,
-    ManifactureDate = new DateTime(2000, 1, 1),
-    MyPlaneType = PlaneType.AirBus
+    Destination = "Paris",
+    Departure = "Madrid",
+    FlightDate = new DateTime(2022, 10, 19, 7, 0, 0),
+    EstimatedDuration = 200,
+    EffectiveArrival = new DateTime(2022, 10, 22, 9, 20, 0),
+    Comment = "Comment"
+});
+
+flightService.Add(new Flight()
+{
+    Destination = "London",
+    Departure = "Tunis",
+    FlightDate = new DateTime(2022, 10, 23, 7, 0, 0),
+    EstimatedDuration = 120,
+    EffectiveArrival = new DateTime(2022, 10, 24, 9, 20, 0),
+    Comment = "Comment"
 });
 #endregion
